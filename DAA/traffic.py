@@ -262,11 +262,14 @@ sns.lineplot(x="AVERAGE_RAIN", y="AVERAGE_SPEED_DIFF",data=df)
 
 #Remover colunas redundantes
 
+df = df.drop('record_date',axis=1)
 df = df.drop('DAY_PART',axis=1)
 df = df.drop('DAY',axis=1)
 df = df.drop('IS_WEEKEND',axis=1)
 df = df.drop('MONTH',axis=1)
 
+
+df_test = df_test.drop('record_date',axis=1)
 df_test = df_test.drop('DAY_PART',axis=1)
 df_test = df_test.drop('DAY',axis=1)
 df_test = df_test.drop('IS_WEEKEND',axis=1)
@@ -280,5 +283,5 @@ targette.close()
 os.remove("datasets/training_data_utf8.csv")
 os.remove("datasets/test_data_utf8.csv")
 
-df.to_csv("datasets/training_data_clean.csv")
-df.to_csv("datasets/test_data_clean.csv")
+df.to_csv("datasets/training_data_clean.csv",index=False)
+df_test.to_csv("datasets/test_data_clean.csv",index=False)

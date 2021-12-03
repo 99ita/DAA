@@ -7,6 +7,9 @@ import seaborn as sns
 import sklearn
 from sklearn import preprocessing
 
+clf = sklt.DecisionTreeClassifier()
+
+clf.fit(x_train,y_train)
 #Read csv file
 
 df = pd.read_csv('datasets/stroke.csv',encoding='latin-1')
